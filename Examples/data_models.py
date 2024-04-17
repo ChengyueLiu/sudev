@@ -29,3 +29,14 @@ class Serializable:
             else:
                 init_args[field.name] = field_value
         return cls(**init_args)
+
+
+@dataclass
+class Demo(Serializable):
+    name: str
+    age: int
+
+
+if __name__ == '__main__':
+    demo = Demo(name='Tom', age=18)
+    demo.customer_serialize()
